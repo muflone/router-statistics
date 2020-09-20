@@ -36,6 +36,7 @@ class BaseModel(object):
         self.password = password
         self.interfaces = []
         self.info = SystemInfo()
+        self.friendly_name = None
 
     def open(self):
         """

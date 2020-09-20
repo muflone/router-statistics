@@ -78,6 +78,7 @@ if __name__ == '__main__':
         # Load data
         model.get_data()
         # Get info
+        print(model.friendly_name)
         print(model.get_system_info())
         # Get interfaces
         print(model.get_interfaces(InterfaceType.ETHERNET))
