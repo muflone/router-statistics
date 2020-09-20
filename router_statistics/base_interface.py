@@ -20,8 +20,17 @@
 
 from dataclasses import dataclass
 
+from .interface_type import InterfaceType
+
 
 @dataclass
 class BaseInterface(object):
-    name: str
-    address: str
+    type: InterfaceType = InterfaceType.UNSPECIFIED
+    name: str = ''
+    address: str = ''
+    subnet: str = ''
+    status: bool = True
+    gateway: str = ''
+    protocol: str = ''
+    mac_address: str = ''
+    speed: int = 0
