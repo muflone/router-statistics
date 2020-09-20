@@ -20,6 +20,7 @@
 
 from ..base_interface import BaseInterface
 from ..interface_type import InterfaceType
+from ..system_info import SystemInfo
 
 
 class BaseModel(object):
@@ -34,6 +35,7 @@ class BaseModel(object):
         self.username = username
         self.password = password
         self.interfaces = []
+        self.info = SystemInfo()
 
     def open(self):
         """
@@ -53,6 +55,13 @@ class BaseModel(object):
         :return: None
         """
         self.interfaces.clear()
+
+    def get_system_info(self) -> SystemInfo:
+        """
+        Get the system information
+        :return: SystemInfo object
+        """
+        return self.info
 
     def get_interfaces(self, type: InterfaceType) -> BaseInterface:
         """

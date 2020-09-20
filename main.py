@@ -77,6 +77,8 @@ if __name__ == '__main__':
     with router as model:
         # Load data
         model.get_data()
+        # Get info
+        print(model.get_system_info())
         # Get interfaces
         print(model.get_interfaces(InterfaceType.ETHERNET))
         print(model.get_interfaces(InterfaceType.INTERNET))
