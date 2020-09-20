@@ -7,3 +7,6 @@ __pycache__/
 
 # Backup files
 *~
+
+# Pycharm project files
+.idea/
