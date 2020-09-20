@@ -78,6 +78,8 @@ if __name__ == '__main__':
         # Load data
         model.get_data()
         # Get info
+        print(model.brand)
+        print(model.model_name)
         print(model.friendly_name)
         print(model.get_system_info())
         # Get interfaces

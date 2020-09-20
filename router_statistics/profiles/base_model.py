@@ -72,3 +72,19 @@ class BaseModel(object):
         """
         return [interface for interface in self.interfaces
                 if interface.type == type]
+
+    @property
+    def brand(self) -> str:
+        """
+        Return the model brand
+        :return: string representing the brand
+        """
+        return self.info.manufacturer
+
+    @property
+    def model_name(self) -> str:
+        """
+        Return the model name
+        :return: string representing the model name
+        """
+        return self.info.model
