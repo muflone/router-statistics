@@ -16,3 +16,5 @@ Get your router statistics by choosing the specific model (called profile)
 # System Requirements
 
 * Python 3.x
+* Python Requests (https://pypi.org/project/requests/)
+* Python Beautiful Soup 4 (https://pypi.org/project/beautifulsoup4/)
