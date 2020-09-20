@@ -33,6 +33,18 @@ class BaseModel(object):
         self.username = username
         self.password = password
 
+    def open(self):
+        """
+        Open the connection to the router
+        """
+        pass
+
+    def close(self):
+        """
+        Close the connection to the router
+        """
+        pass
+
     def get_interface_lan(self) -> BaseInterface:
         """
         Get the LAN interface

@@ -48,3 +48,16 @@ class Router(object):
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
         return module.Model
+
+    def __enter__(self):
+        """
+        Open the connection to the router
+        """
+        self.model.open()
+        return self.model
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        """
+        Close the connection to the router
+        """
+        return self.model.close()

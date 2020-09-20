@@ -72,4 +72,6 @@ if __name__ == '__main__':
                     destination=arguments.destination,
                     username=arguments.username,
                     password=arguments.password)
-    model = router.model
+    # Execute actions
+    with router as model:
+        pass
