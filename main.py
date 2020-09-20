@@ -23,6 +23,7 @@ import argparse
 import getpass
 
 from router_statistics.constants import APP_NAME, VERSION
+from router_statistics.interface_type import InterfaceType
 from router_statistics.router import Router
 
 
@@ -74,4 +75,9 @@ if __name__ == '__main__':
                     password=arguments.password)
     # Execute actions
     with router as model:
-        pass
+        # Load data
+        model.get_data()
+        # Get interfaces
+        print(model.get_interfaces(InterfaceType.ETHERNET))
+        print(model.get_interfaces(InterfaceType.INTERNET))
+        print(model.get_interfaces(InterfaceType.WIFI))

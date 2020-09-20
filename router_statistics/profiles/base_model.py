@@ -19,6 +19,7 @@
 ##
 
 from ..base_interface import BaseInterface
+from ..interface_type import InterfaceType
 
 
 class BaseModel(object):
@@ -32,6 +33,7 @@ class BaseModel(object):
         self.address = address
         self.username = username
         self.password = password
+        self.interfaces = []
 
     def open(self):
         """
@@ -45,16 +47,18 @@ class BaseModel(object):
         """
         pass
 
-    def get_interface_lan(self) -> BaseInterface:
+    def get_data(self) -> None:
         """
-        Get the LAN interface
-        :return: LAN interface name
+        Get data from the router
+        :return: None
         """
-        pass
+        self.interfaces.clear()
 
-    def get_interface_wan(self) -> BaseInterface:
+    def get_interfaces(self, type: InterfaceType) -> BaseInterface:
         """
-        Get the WAN interface
-        :return: WAN interface name
+        Get a list of interfaces of the supplied type
+        :param type: interfaces type
+        :return: list of interfaces
         """
-        pass
+        return [interface for interface in self.interfaces
+                if interface.type == type]
